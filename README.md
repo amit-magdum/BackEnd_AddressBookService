@@ -14,16 +14,27 @@ The services is written in Java and use the following technologies.
 -Maven
 -Swagger for API Documentation
 
-Model(s)--
-public class AddressBook { 
-      
-          private String firstname;
-          private String lastname;
-          private String street;
-          private String city;
-          private String state;
-          private String pincode;
-}
+Build and Running the service-
 
-Running the service-
+To build the project, we are using  Maven.
+project- run - build with maven - mvn clean install
+
+After the project has been built, a target directory will be created containing the executable jar.
+
+
+To build image and run it Launch docker desktop 
+Tranverse to 'target' director where jar is located
+Run the below commands-- 
+	docker build -f Dockerfile -t addressbookdemo .
+	docker run -p 8000:8000 addressbookdemo
+
+Application will run on port 8080
+ 
+ 
+You can use below links to consume the api and to swagger the documentation-
+http://localhost:8080/AddressFromCSV/{city}
+http://localhost:8080/swagger-resources/
+http://localhost:8080/swagger-ui/
+http://localhost:8080/v2/api-docs/
+
 
